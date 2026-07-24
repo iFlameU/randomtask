@@ -5,11 +5,13 @@ import randomtask.Task;
 public class RandomTaskTest {
 
   @Test
-  void addTaskTest() {
+  void getTest() {
     RandomTask randomTask = new RandomTask();
 
     Task task = new Task();
 
     randomTask.add(task);
+
+    randomTask.get();
   }
 }
