@@ -1,6 +1,6 @@
+package randomtask;
+
 import org.junit.jupiter.api.Test;
-import randomtask.RandomTask;
-import randomtask.Task;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
