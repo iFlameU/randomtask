@@ -12,6 +12,6 @@ public class RandomTaskTest {
 
     randomTask.add(task);
 
-    randomTask.get();
+    Task returned = randomTask.get();
   }
 }

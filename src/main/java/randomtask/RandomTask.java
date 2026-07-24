@@ -5,7 +5,8 @@ public class RandomTask {
 
   }
 
-  public void get() {
+  public Task get() {
 
+    return null;
   }
 }
