@@ -9,5 +9,7 @@ public class RandomTaskTest {
     RandomTask randomTask = new RandomTask();
 
     Task task = new Task();
+
+    randomTask.add(task);
   }
 }
