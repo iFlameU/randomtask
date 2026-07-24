@@ -15,10 +15,13 @@ public class TaskTest {
     assertEquals(task1, task2);
   }
 
+  @Test
   void notEquals() {
     Task task1 = new Task();
     Task task2 = new Task();
 
     task1.setName("Task1");
+
+    assertNotEquals(task1, task2);
   }
 }
