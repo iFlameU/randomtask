@@ -2,6 +2,8 @@ import org.junit.jupiter.api.Test;
 import randomtask.RandomTask;
 import randomtask.Task;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
 public class RandomTaskTest {
 
   @Test
@@ -13,5 +15,7 @@ public class RandomTaskTest {
     randomTask.add(task);
 
     Task returned = randomTask.get();
+
+    assertEquals(task, returned);
   }
 }

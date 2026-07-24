@@ -1,12 +1,14 @@
 package randomtask;
 
 public class RandomTask {
-  public void add(Task task) {
+  private Task task;
 
+  public void add(Task task) {
+    this.task = task;
   }
 
   public Task get() {
 
-    return null;
+    return task;
   }
 }
