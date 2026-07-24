@@ -3,6 +3,7 @@ package randomtask;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNotEquals;
 
 public class TaskTest {
 
@@ -12,5 +13,12 @@ public class TaskTest {
     Task task2 = new Task();
 
     assertEquals(task1, task2);
+  }
+
+  void notEquals() {
+    Task task1 = new Task();
+    Task task2 = new Task();
+
+    task1.setName("Task1");
   }
 }
