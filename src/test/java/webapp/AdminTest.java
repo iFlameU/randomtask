@@ -10,9 +10,11 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.springframework.boot.SpringApplication;
 import org.springframework.context.ConfigurableApplicationContext;
 
+import java.time.Duration;
+
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
-public class LandingPageTest {
+public class AdminTest {
   static WebDriver driver;
   static ConfigurableApplicationContext context;
 
@@ -20,6 +22,7 @@ public class LandingPageTest {
   static void setup() {
     context = SpringApplication.run(Main.class, "--server.port=8081");
     driver = new ChromeDriver();
+    driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
   }
 
   @AfterAll
@@ -29,13 +32,14 @@ public class LandingPageTest {
   }
 
   @Test
-  @DisplayName("When I open the page I want to be presented the login page")
-  void loginPage(){
+  @DisplayName("When I log in as admin I should see the list of users")
+  void loginAsAdmin(){
 
     driver.get("http://localhost:8081");
+    driver.findElement(By.id("username")).sendKeys("admin");
+    driver.findElement(By.id("password")).sendKeys("admin");
+    driver.findElement(By.id("login-button")).click();
 
-    assertTrue(driver.findElement(By.id("username")).isDisplayed());
-    assertTrue(driver.findElement(By.id("password")).isDisplayed());
-    assertTrue(driver.findElement(By.id("login-button")).isDisplayed());
+    assertTrue(driver.findElement(By.id("users-list")).isDisplayed());
   }
 }
