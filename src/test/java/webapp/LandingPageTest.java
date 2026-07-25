@@ -1,19 +1,36 @@
 package webapp;
 
+import org.junit.jupiter.api.AfterAll;
+import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.springframework.boot.SpringApplication;
+import org.springframework.context.ConfigurableApplicationContext;
 
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 public class LandingPageTest {
-  @Test
-  void seleniumWorks(){
-    WebDriver driver = new ChromeDriver();
+  static WebDriver driver;
+  static ConfigurableApplicationContext context;
 
-    driver.get("https://www.google.com/");
+  @BeforeAll
+  static void setup() {
+    context = SpringApplication.run(Main.class, "--server.port=8081");
+    driver = new ChromeDriver();
+  }
 
+  @AfterAll
+  static void teardown() {
     driver.quit();
+    context.close();
+  }
+
+  @Test
+  void webAppWorks(){
+
+    driver.get("http://localhost:8081");
+
     assertTrue(true);
   }
 }
