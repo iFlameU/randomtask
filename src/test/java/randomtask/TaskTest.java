@@ -1,9 +1,9 @@
 package randomtask;
 
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertNotEquals;
+import static org.junit.jupiter.api.Assertions.*;
 
 public class TaskTest {
 
@@ -33,7 +33,11 @@ public class TaskTest {
     task1.setName("Task");
     task2.setName("Task");
 
-    task1.setEstimatedTime("10m");
+    try {
+      task1.setEstimatedTime("10m");
+    } catch (InvalidEstimatedTimeFormatException e) {
+      fail();
+    }
 
     assertNotEquals(task1, task2);
   }
@@ -53,8 +57,22 @@ public class TaskTest {
     Task task = new Task();
 
     String estimatedTime = "10m";
-    task.setEstimatedTime(estimatedTime);
+    try {
+      task.setEstimatedTime(estimatedTime);
+    } catch (InvalidEstimatedTimeFormatException e) {
+      fail();
+    }
 
     assertEquals(estimatedTime, task.getEstimatedTime());
+  }
+
+  @Test
+  @DisplayName("Estimated time must have the format '<number>y <number>d <number>h <number>m'")
+  void setEstimatedTime() {
+    Task task = new Task();
+
+    String estimatedTime = "10";
+
+    assertThrows(InvalidEstimatedTimeFormatException.class, () -> task.setEstimatedTime(estimatedTime));
   }
 }

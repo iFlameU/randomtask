@@ -14,7 +14,11 @@ public class RandomTaskTest {
     Task task = new Task();
 
     task.setName("Test");
-    task.setEstimatedTime("10m");
+    try {
+      task.setEstimatedTime("10m");
+    } catch (InvalidEstimatedTimeFormatException e) {
+      fail();
+    }
 
     try {
       randomTask.add(task);

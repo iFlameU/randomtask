@@ -1,6 +1,8 @@
 package randomtask;
 
 import java.util.Objects;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 public class Task {
 
@@ -25,7 +27,13 @@ public class Task {
     return this.name;
   }
 
-  public void setEstimatedTime(String estimatedTime) {
+  public void setEstimatedTime(String estimatedTime) throws InvalidEstimatedTimeFormatException {
+    Pattern PATTERN = Pattern.compile("^(?:(\\d+)y)?(?:(\\d+)d)?(?: ?(\\d+)h)?(?: ?(\\d+)m)?$");
+    Matcher matcher = PATTERN.matcher(estimatedTime);
+
+    if (!matcher.matches()) {
+      throw new InvalidEstimatedTimeFormatException();
+    }
     this.estimatedTime = estimatedTime;
   }
 

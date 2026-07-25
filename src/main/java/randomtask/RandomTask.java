@@ -5,10 +5,10 @@ public class RandomTask {
 
   public void add(Task task) throws TaskEmptyNameException, TaskNoEstimatedTimeException {
     if(task.getName() == null || task.getName().isEmpty()) {
-      throw new TaskEmptyNameException("Task has no name");
+      throw new TaskEmptyNameException();
     }
     if(task.getEstimatedTime() == null || task.getEstimatedTime().isEmpty()) {
-      throw new TaskNoEstimatedTimeException("Task has no estimated time");
+      throw new TaskNoEstimatedTimeException();
     }
     this.task = task;
   }
