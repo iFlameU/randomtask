@@ -5,11 +5,14 @@ import java.util.Objects;
 public class Task {
 
   private String name;
+  private String estimatedTime;
 
   @Override
   public boolean equals(Object obj) {
     if (obj instanceof Task other) {
-      return Objects.equals(this.name, other.name);
+      return
+        Objects.equals(this.name, other.name) &&
+          Objects.equals(this.estimatedTime, other.estimatedTime);
     }
     return false;
   }
@@ -20,5 +23,13 @@ public class Task {
 
   public String getName() {
     return this.name;
+  }
+
+  public void setEstimatedTime(String estimatedTime) {
+    this.estimatedTime = estimatedTime;
+  }
+
+  public String getEstimatedTime() {
+    return estimatedTime;
   }
 }

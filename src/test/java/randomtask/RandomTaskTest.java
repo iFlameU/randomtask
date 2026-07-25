@@ -14,10 +14,11 @@ public class RandomTaskTest {
     Task task = new Task();
 
     task.setName("Test");
+    task.setEstimatedTime("10m");
 
     try {
       randomTask.add(task);
-    } catch (TaskEmptyNameException e) {
+    } catch (TaskEmptyNameException | TaskNoEstimatedTimeException e) {
       fail();
     }
 
@@ -34,5 +35,16 @@ public class RandomTaskTest {
     Task task = new Task();
 
     assertThrows(TaskEmptyNameException.class, () -> randomTask.add(task));
+  }
+
+  @Test()
+  @DisplayName("RandomTask.add throws TaskEmptyNameException if Task added has no name")
+  void addNoTaskEstimatedTime() {
+    RandomTask randomTask = new RandomTask();
+
+    Task task = new Task();
+    task.setName("Test");
+
+    assertThrows(TaskNoEstimatedTimeException.class, () -> randomTask.add(task));
   }
 }
