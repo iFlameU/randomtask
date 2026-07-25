@@ -24,4 +24,14 @@ public class TaskTest {
 
     assertNotEquals(task1, task2);
   }
+
+  @Test
+  void getName() {
+    Task task = new Task();
+
+    String name = "Task name";
+    task.setName(name);
+
+    assertEquals(name, task.getName());
+  }
 }
