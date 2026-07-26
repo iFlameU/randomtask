@@ -26,6 +26,6 @@ public class RandomTaskWebAppTest {
   @Test
   @DisplayName("RandomTaskWebApp.getVisitor needs to return an object")
   void getVisitorReturnsAnObject() {
-    //assertNotNull(new RandomTaskWebApp().getVisitor());
+    assertNotNull(new RandomTaskWebApp().getVisitor());
   }
 }

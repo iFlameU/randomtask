@@ -1,5 +1,7 @@
 package randomtaskwebapp;
 
 public class RandomTaskWebApp {
-  public void getVisitor() {}
+  public Object getVisitor() {
+    return new Object();
+  }
 }
