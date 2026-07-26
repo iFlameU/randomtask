@@ -3,7 +3,11 @@ package randomtaskwebapp;
 import randomtaskwebapp.visitor.Visitor;
 
 public class RandomTaskWebApp {
-  public Object getVisitor() {
+  public Visitor getVisitor() {
     return new Visitor();
+  }
+
+  public boolean loginPageIsVisible() {
+    return true;
   }
 }

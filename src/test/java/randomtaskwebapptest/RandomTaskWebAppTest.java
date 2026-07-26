@@ -33,4 +33,17 @@ public class RandomTaskWebAppTest {
   void getVisitorReturnsAVisitorObject() {
     assertInstanceOf(Visitor.class, new RandomTaskWebApp().getVisitor());
   }
+
+  @Test
+  @DisplayName("RandomTaskWebApp need to have a function called loginPageIsVisible")
+  void randomTaskWebAppHasLoginPageIsVisible() {
+    assertDoesNotThrow(() -> RandomTaskWebApp.class.getMethod("loginPageIsVisible"));
+  }
+
+  @Test
+  @DisplayName("RandomTaskWebApp.loginPageIsVisible needs to return a boolean")
+  void loginPageIsVisibleReturnsAVisitorObject() {
+    assertInstanceOf(Boolean.class, new RandomTaskWebApp().loginPageIsVisible());
+  }
+
 }
