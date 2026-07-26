@@ -29,7 +29,7 @@ public class RandomTaskWebAppTest {
   }
 
   @Test
-  @DisplayName("RandomTaskWebApp.getVisitor needs to return a Visitor objext")
+  @DisplayName("RandomTaskWebApp.getVisitor needs to return a Visitor object")
   void getVisitorReturnsAVisitorObject() {
     assertInstanceOf(Visitor.class, new RandomTaskWebApp().getVisitor());
   }

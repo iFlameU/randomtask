@@ -4,6 +4,7 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import randomtaskwebapp.visitor.Visitor;
 
+import static org.junit.jupiter.api.Assertions.assertDoesNotThrow;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 
 public class VisitorTest {
@@ -13,5 +14,11 @@ public class VisitorTest {
   void visitorExists() {
     //noinspection ObviousNullCheck
     assertNotNull(new Visitor());
+  }
+
+  @Test
+  @DisplayName("Visitor needs to have a function called openPage")
+  void randomTaskWebAppHasGetVisitor() {
+    assertDoesNotThrow(() -> Visitor.class.getMethod("openPage"));
   }
 }
