@@ -21,4 +21,10 @@ public class RandomTaskWebAppTest {
   void randomTaskWebAppHasGetVisitor() {
     assertDoesNotThrow(() -> RandomTaskWebApp.class.getMethod("getVisitor"));
   }
+
+  @Test
+  @DisplayName("RandomTaskWebApp.getVisitor needs to return an object")
+  void getVisitorReturnsAnObject() {
+    assertNotNull(new RandomTaskWebApp().getVisitor());
+  }
 }
