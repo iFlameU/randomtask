@@ -11,7 +11,7 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.context.ConfigurableApplicationContext;
 import server.Main;
 
-import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class UserStoriesTest {
   static ConfigurableApplicationContext context;
@@ -31,12 +31,13 @@ public class UserStoriesTest {
 
   /*
   Opening http://localhost:8081 I want a page to load
+  When the page loads I want to see an input for the username
    */
   @Test
-  @DisplayName("When the page loads I want to see an input for the username")
+  @DisplayName("The username input should show in gray inside 'Username'")
   void userStory() {
     driver.get("http://localhost:8081");
 
-    assertTrue(driver.findElement(By.cssSelector("input#username")).isDisplayed());
+    assertEquals("Username", driver.findElement(By.cssSelector("input#username")).getDomAttribute("placeholder"));
   }
 }

@@ -12,7 +12,7 @@ public class HomeController {
             <!DOCTYPE html>
             <html>
               <body>
-                <input id="username"/>
+                <input id="username" placeholder="Username"/>
               </body>
             </html>
             """;
