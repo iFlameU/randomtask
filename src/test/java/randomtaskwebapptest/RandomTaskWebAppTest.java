@@ -3,9 +3,9 @@ package randomtaskwebapptest;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import randomtaskwebapp.RandomTaskWebApp;
+import randomtaskwebapp.visitor.Visitor;
 
-import static org.junit.jupiter.api.Assertions.assertDoesNotThrow;
-import static org.junit.jupiter.api.Assertions.assertNotNull;
+import static org.junit.jupiter.api.Assertions.*;
 
 public class RandomTaskWebAppTest {
 
@@ -26,5 +26,11 @@ public class RandomTaskWebAppTest {
   @DisplayName("RandomTaskWebApp.getVisitor needs to return an object")
   void getVisitorReturnsAnObject() {
     assertNotNull(new RandomTaskWebApp().getVisitor());
+  }
+
+  @Test
+  @DisplayName("RandomTaskWebApp.getVisitor needs to return a Visitor objext")
+  void getVisitorReturnsAVisitorObject() {
+    assertInstanceOf(Visitor.class, new RandomTaskWebApp().getVisitor());
   }
 }
