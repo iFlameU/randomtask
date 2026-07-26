@@ -19,6 +19,6 @@ public class RandomTaskWebAppTest {
   @Test
   @DisplayName("RandomTaskWebApp need to have a function called getVisitor")
   void randomTaskWebAppHasGetVisitor() {
-    assertDoesNotThrow(RandomTaskWebApp.class.getMethod("getVisitor"));
+    assertDoesNotThrow(() -> RandomTaskWebApp.class.getMethod("getVisitor"));
   }
 }
