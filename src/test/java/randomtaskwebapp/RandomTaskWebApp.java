@@ -10,4 +10,8 @@ public class RandomTaskWebApp {
   public boolean loginPageIsVisible() {
     return true;
   }
+
+  public boolean showsInvalidCredentialsErrorMessage() {
+    return true;
+  }
 }

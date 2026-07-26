@@ -42,8 +42,19 @@ public class RandomTaskWebAppTest {
 
   @Test
   @DisplayName("RandomTaskWebApp.loginPageIsVisible needs to return a boolean")
-  void loginPageIsVisibleReturnsAVisitorObject() {
+  void loginPageIsVisibleReturnsABoolean() {
     assertInstanceOf(Boolean.class, new RandomTaskWebApp().loginPageIsVisible());
   }
 
+  @Test
+  @DisplayName("RandomTaskWebApp need to have a function called showsInvalidCredentialsErrorMessage")
+  void randomTaskWebAppHasShowsInvalidCredentialsErrorMessage() {
+    assertDoesNotThrow(() -> RandomTaskWebApp.class.getMethod("showsInvalidCredentialsErrorMessage"));
+  }
+
+  @Test
+  @DisplayName("RandomTaskWebApp.showsInvalidCredentialsErrorMessage needs to return a boolean")
+  void showsInvalidCredentialsErrorMessageReturnsABoolean() {
+    assertInstanceOf(Boolean.class, new RandomTaskWebApp().showsInvalidCredentialsErrorMessage());
+  }
 }

@@ -21,4 +21,11 @@ public class VisitorTest {
   void randomTaskWebAppHasGetVisitor() {
     assertDoesNotThrow(() -> Visitor.class.getMethod("openPage"));
   }
+
+  @Test
+  @DisplayName("Visitor needs to have a function called loginWithInvalidCredentials")
+  void randomTaskWebAppHasLoginWithInvalidCredentials() {
+    assertDoesNotThrow(() -> Visitor.class.getMethod("loginWithInvalidCredentials"));
+  }
+
 }
