@@ -4,7 +4,7 @@ export default defineConfig({
   testDir: './tests',
   reporter: 'html',
   use: {
-    baseURL: 'http://localhost:3000',
+    baseURL: 'http://localhost:5173',
 
     trace: 'on-first-retry',
   },
@@ -17,8 +17,8 @@ export default defineConfig({
   ],
 
   webServer: {
-    command: 'npm run start',
-    cwd: "../api",
-    url: 'http://localhost:3000',
+    command: 'npm run dev',
+    cwd: "../webapp",
+    url: 'http://localhost:5173',
   },
 });
