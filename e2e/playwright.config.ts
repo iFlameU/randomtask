@@ -18,7 +18,7 @@ export default defineConfig({
 
   webServer: {
     command: 'npm run start',
-    cwd: "../server",
+    cwd: "../api",
     url: 'http://localhost:3000',
   },
 });
